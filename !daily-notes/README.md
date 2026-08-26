@@ -17,6 +17,12 @@ A second purpose is yesterday. The **Yesterday** prompt is there so you notice w
 
 Habit fields in this public vault are generic examples. Change them to match your life (see Customizing habits).
 
+## What belongs on the daily note
+
+The Properties fields are **personal habits that promote life stability and consistency** — the ones you are trying to make automatic because a current pattern is costing you. Each field should have a matching note in the [[~goals/README|goals folder]] that says what the goal is and how you will achieve it.
+
+They are not a catch-all checklist. Shaving, taking medication, or “study one hour” would not qualify: those are tasks or one-off discipline, not stability habits you are rebuilding. Cooking at home (`home_cook`) qualifies if the problem is eating out; no phone in bed (`bed_no_phone`) qualifies if the problem is doom-scrolling. Pick fields the same way: a real pattern you are replacing, with a goal file behind it.
+
 ## Plugins and settings
 
 Required:
