@@ -8,7 +8,7 @@ tags: [goal]
 
 ## What this goal is
 
-Keep the daily phone out of bed so the last hour of the day is not a feed. Presence and sleep: the bed is for sleeping, not scrolling.
+Keep the daily phone out of bed so the last hour of the day is not scrolling. Main idea: the bed is for sleeping, not scrolling.
 
 ## How I want to achieve it
 

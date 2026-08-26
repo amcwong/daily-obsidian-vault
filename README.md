@@ -4,6 +4,16 @@ This vault is the **reusable configuration** of a personal Obsidian vault used f
 
 Copy or clone it, install the plugins below, and follow each folder’s README. Do not commit `.obsidian/todoist-token` or your own journal, school, or work notes if you publish a fork.
 
+Feel free to modify the workflows to fit your needs :).
+
+## Why this vault exists
+
+The **core habit** is opening the daily note. Do that consistently and you always have a place to plan today, reflect on what yesterday could have been better, and set or adjust goals. I do this via a journalling habit and connecting the reward system to my Todolist, change this as desired.
+
+The **secondary workflow** is misc notes: a fast way to capture tldr-first reference notes. Using Claude or any other LLM service, you can use it to make quick notes that promote active recall.
+
+Everything else is optional organization. Keep `dev/` and `π-imgs/` where they are (`dev/` holds Templater scripts; `π-imgs/` is the attachment folder). Any other folder — daily notes, misc notes, goals, archive, placeholders, `style-guide/` — you can move or rename to fit how you take notes. If you move a workflow folder, update that folder’s plugin settings (Daily Notes path, template path, and so on).
+
 ## Quick start
 
 1. Open this folder as an Obsidian vault.
@@ -21,7 +31,7 @@ Todoist is **not** installed. Add it only if you want today’s tasks rendered i
 
 ## Folder map
 
-Look at the file explorer. That sort order is the point of the prefix system.
+Look at the file explorer. That sort order is the point of the prefix system. Only `dev/` and `π-imgs/` need to stay put; the rest of this table is a starting layout, not a required one. 
 
 | Folder | Prefix | What it is |
 |---|---|---|

@@ -1,6 +1,6 @@
 # Archive
 
-Low-frequency prefix (`π-`). Put cooled-off workflows and old project folders here so they sink to the bottom of the file explorer without being deleted.
+Low-frequency prefix (`π-`). Put old or infrequently touched workflows and old project folders here so they sink to the bottom of the file explorer without being deleted.
 
 To archive something: rename its folder with a `π-` prefix (or move it into this folder), then update any Daily Notes / Templater / Dataview paths that still point at the old location. See [[style-guide/folder-prefixes]].
 
