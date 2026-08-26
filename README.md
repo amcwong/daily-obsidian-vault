@@ -4,7 +4,9 @@ This vault is the **reusable configuration** of a personal Obsidian vault used f
 
 Copy or clone it, then follow each folder’s README. Plugin and theme setup is in [[dev/docs/common-issues|common issues]]. Do not commit `.obsidian/todoist-token` or your own journal, school, or work notes if you publish a fork.
 
-Feel free to modify the workflows to fit your needs :).
+Feel free to modify the workflows to fit your needs :)
+
+**NOTE:** The links in this md file will only work after you download the repository and open it in Obsidian or a code editor.
 
 ## Why this vault exists
 
