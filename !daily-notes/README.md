@@ -11,7 +11,7 @@ Opening the daily note is the “make your bed” habit: a small, reliable actio
 A second purpose is yesterday. The **Yesterday** prompt is there so you notice what to improve and turn that into something concrete to work on — a goal to keep, adjust, or start. Defining goals, then maintaining and working on them, is a large part of what the note is for. The journal captures that reflection; the Properties fields are how those goals get logged day after day.
 
 - YAML habits keep the Properties panel as the daily checklist.
-- `todo_done` is a coarse `0` / `1` / `2` instead of a live task embed, so the note still works if no task plugin is installed.
+- The template embeds today’s and overdue Todoist tasks (same filter as the old v2.0 note). The plugin is optional: without it the block is inert, and `todo_done` still scores the day as `0` / `1` / `2`.
 - Carry-over math lives in `!daily-notes/.reward-cache.json`, not in frontmatter, so Properties stays editable fields only.
 - Two reward tracks share the same daily points but have different horizons. Rename the prizes in the template.
 
@@ -65,28 +65,11 @@ If you rename `!daily-notes`, update Daily Notes settings. The template and `car
 
 ## Todoist plugin (optional display)
 
-Not installed in this vault. Scoring does not need it.
+The daily template already includes a **Tasks (Today & Overdue)** block (`filter: "(today | overdue) & (!shared)"`). This vault does not install the plugin by default. Scoring via `todo_done` does not need it.
 
-Install the Todoist community plugin **only** if you want today’s tasks rendered in the note:
+To make the list render:
 
 1. Settings → Community plugins → browse **Todoist Plugin** (Jamie Brynes) → Install and Enable.
 2. Paste your API token in the plugin settings. Do not commit `.obsidian/todoist-token`.
-3. Add blocks like these to the daily template (not inside YAML):
-
-````markdown
-## Today's Tasks
-
-```todoist
-name: Today's Tasks
-filter: "today"
-```
-
-## Overdue Tasks
-
-```todoist
-name: Overdue Tasks
-filter: "overdue"
-```
-````
 
 Complete tasks in Todoist (sync is one-way into Obsidian). Command palette → “Todoist: Refresh” if the list looks stale.

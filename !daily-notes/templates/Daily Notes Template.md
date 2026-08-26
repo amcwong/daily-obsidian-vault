@@ -10,18 +10,6 @@ reward_a_claimed: 0
 reward_b_claimed: 0
 ---
 <%* await tp.user.carryOverCalc(tp) %>
-# Daily Journal
----
-***Today***
-<% tp.file.cursor(1) %>
-
-***Yesterday***
-<% tp.file.cursor(2) %>
-
-**Reward A**: *rename this prize*
-**Reward B**: *rename this prize*
-
----
 ### 📈 Metrics & Streaks
 ```dataviewjs
 // Carry-in totals come from .reward-cache.json (written at note creation).
@@ -95,3 +83,21 @@ dv.table(
     ]
 );
 ```
+
+## 📋 Tasks (Today & Overdue)
+
+```todoist
+name: Active Tasks
+filter: "(today | overdue) & (!shared)"
+```
+
+# Daily Journal
+---
+***Today***
+<% tp.file.cursor(1) %>
+
+***Yesterday***
+<% tp.file.cursor(2) %>
+
+**Reward A**: *rename this prize*
+**Reward B**: *rename this prize*
