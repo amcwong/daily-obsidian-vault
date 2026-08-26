@@ -2,6 +2,8 @@
 
 One note per day: a short, forced check-in with your task list and your current goals, plus a journal and goal scoreboard. A task list (Todoist or anything else) stays the task system of record. This note does not replace that list — it makes you look at it.
 
+**I highly recommend setting up Todoist.** Follow [[dev/docs/todoist-setup|Todoist setup]].
+
 A fictional example: `!daily-notes/notes/2026/01-January/2026-01-15.md`.
 
 How daily notes and goals fit together: [[~goals/README|~goals/README.md]].
@@ -13,7 +15,7 @@ Opening the daily note is the “make your bed” habit: a small, reliable actio
 A second purpose is yesterday. The **Yesterday** prompt is there so you notice what to improve and turn that into something concrete to work on — a goal to keep, adjust, or start. Defining goals, then maintaining and working on them, is a large part of what the note is for. The journal captures that reflection; the Properties fields are how those goals get logged day after day.
 
 - YAML goal fields keep the Properties panel as the daily checklist.
-- The template embeds today’s and overdue Todoist tasks (same filter as the old v2.0 note). The plugin is optional: without it the block is inert, and `todo_done` still scores the day as `0` / `1` / `2`.
+- The template embeds today’s and overdue Todoist tasks. Setup: [[dev/docs/todoist-setup|Todoist setup]]. Without the plugin the block is inert; `todo_done` still scores the day as `0` / `1` / `2`.
 - Carry-over math lives in `!daily-notes/.reward-cache.json`, not in frontmatter, so Properties stays editable fields only.
 - Two reward tracks share the same daily points but have different horizons. Rename the prizes in the template.
 
@@ -34,7 +36,7 @@ Required:
 - **Dataview** — Enable JavaScript queries
 - **Calendar** — uses the same Daily Notes settings
 
-Hotkeys: see [[style-guide/hotkeys]] (Cmd-Shift-D / Y / ; / A).
+Hotkeys: see [[dev/docs/hotkeys]] (Cmd-Shift-D / Y / ; / A).
 
 ## Daily loop
 
@@ -69,15 +71,4 @@ If they drift, scores and streaks disagree.
 
 ## Prefix-rename caution
 
-If you rename `!daily-notes`, update Daily Notes settings. The template and `carryOverCalc.js` derive the folder root from the current path (everything before `/notes/`). See [[style-guide/folder-prefixes]].
-
-## Todoist plugin (optional display)
-
-The daily template already includes a **Tasks (Today & Overdue)** block (`filter: "(today | overdue) & (!shared)"`). This vault does not install the plugin by default. Scoring via `todo_done` does not need it.
-
-To make the list render:
-
-1. Settings → Community plugins → browse **Todoist Plugin** (Jamie Brynes) → Install and Enable.
-2. Paste your API token in the plugin settings. Do not commit `.obsidian/todoist-token`.
-
-Complete tasks in Todoist (sync is one-way into Obsidian). Command palette → “Todoist: Refresh” if the list looks stale.
+If you rename `!daily-notes`, update Daily Notes settings. The template and `carryOverCalc.js` derive the folder root from the current path (everything before `/notes/`). See [[dev/style-guide/folder-prefixes]].
