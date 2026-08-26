@@ -1,10 +1,14 @@
 # Daily notes
 
-One note per day: journal plus habit scoreboard. A task list (Todoist or anything else) stays the task system of record. This note does not duplicate that list.
+One note per day: a short, forced check-in with your task list and your current goals, plus a journal and habit scoreboard. A task list (Todoist or anything else) stays the task system of record. This note does not replace that list — it makes you look at it.
 
 A fictional example: `!daily-notes/notes/2026/01-January/2026-01-15.md`.
 
 ## Why this shape
+
+Opening the daily note is the “make your bed” habit: a small, reliable action that forces you to face the day. That means looking at today’s tasks and at the goals you are already maintaining, not waiting until you feel like planning.
+
+A second purpose is yesterday. The **Yesterday** prompt is there so you notice what to improve and turn that into something concrete to work on — a goal to keep, adjust, or start. Defining goals, then maintaining and working on them, is a large part of what the note is for. The journal captures that reflection; the Properties fields are how those goals get logged day after day.
 
 - YAML habits keep the Properties panel as the daily checklist.
 - `todo_done` is a coarse `0` / `1` / `2` instead of a live task embed, so the note still works if no task plugin is installed.
@@ -27,12 +31,13 @@ Hotkeys: Cmd-Shift-D (today), Cmd-Shift-Y (previous day), Cmd-Shift-; (next Temp
 ## Daily loop
 
 1. Cmd-Shift-D (or the calendar) creates today’s file. Templater runs `carryOverCalc.js` once and writes today’s cache entry.
-2. Write **Today** and **Yesterday**.
-3. Log habits in Properties. Binary habits are `0` or `1`. `todo_done` is:
+2. Look at today’s tasks and at your current goals (the “make your bed” check-in).
+3. Write **Yesterday**: what to improve, and any goal that follows from that. Then write **Today**.
+4. Log habits in Properties. Binary habits are `0` or `1`. `todo_done` is:
    - `0` — did not work the list / none done
    - `1` — partial (about half the day’s tasks)
    - `2` — finished the day’s list
-4. When a reward track hits its threshold, log a positive number in `reward_a_claimed` or `reward_b_claimed`. The **next** note’s carry-in for that track resets to 0. Today’s displayed total does not zero until then.
+5. When a reward track hits its threshold, log a positive number in `reward_a_claimed` or `reward_b_claimed`. The **next** note’s carry-in for that track resets to 0. Today’s displayed total does not zero until then.
 
 ## Scoring (short)
 
