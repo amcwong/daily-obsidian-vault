@@ -4,6 +4,8 @@ One note per day: a short, forced check-in with your task list and your current 
 
 A fictional example: `!daily-notes/notes/2026/01-January/2026-01-15.md`.
 
+How daily notes and goals fit together: [[~goals/README|~goals/README.md]].
+
 ## Why this shape
 
 Opening the daily note is the “make your bed” habit: a small, reliable action that forces you to face the day. That means looking at today’s tasks and at the goals you are already maintaining, not waiting until you feel like planning.
