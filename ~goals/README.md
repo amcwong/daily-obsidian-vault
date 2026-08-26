@@ -11,6 +11,8 @@ Every goal that is a **property on the daily note** must have a file in this fol
 1. What the goal is
 2. How you want to achieve it
 
+The sample daily note’s fields have example files here (`todo-done`, `workout-today`, `home-cook`, `short-meal`, `bed-no-phone`, `early-sleep`, `read-today`). New fields: copy `templates/goal-template.md`.
+
 Rename or re-prefix this folder when your access pattern changes (`!` if it becomes daily, `π-` if it cools off). New subfolders: `-` or `_`, never spaces. See [[style-guide/folder-prefixes]] and [[style-guide/naming]].
 
 ## When a goal needs a folder
