@@ -25,7 +25,7 @@ Look at the file explorer. That sort order is the point of the prefix system.
 
 | Folder | Prefix | What it is |
 |---|---|---|
-| `!daily-notes/` | high use | Daily journal + habit scoreboard |
+| `!daily-notes/` | high use | Daily journal + goal scoreboard |
 | `!misc-notes/` | high use | Tldr-first reference notes from an LLM project |
 | `dev/` | none (tooling) | Templater scripts and plugin-related notes |
 | `style-guide/` | none (tooling) | Vault-wide conventions |

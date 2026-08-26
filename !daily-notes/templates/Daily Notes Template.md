@@ -45,7 +45,7 @@ const REWARD_A_THRESHOLD = calculateThreshold(REWARD_A_DAYS_UNTIL_COMPLETION);
 const REWARD_B_THRESHOLD = calculateThreshold(REWARD_B_DAYS_UNTIL_COMPLETION);
 
 // todo_done is 0 / 1 / 2: 1 is half the todo point budget, 2 is the full
-// budget (equal to all other habits combined).
+// budget (equal to all other goals combined).
 function todoPointsFromValue(value) {
     const n = Number(value || 0);
     if (n === 1) return Math.floor(NUM_NON_TODO_PROPS / 2);
