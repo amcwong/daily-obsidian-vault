@@ -1,0 +1,16 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "todo_done": "number",
+    "workout_today": "number",
+    "home_cook": "number",
+    "short_meal": "number",
+    "bed_no_phone": "number",
+    "early_sleep": "number",
+    "read_today": "number",
+    "reward_a_claimed": "number",
+    "reward_b_claimed": "number"
+  }
+}

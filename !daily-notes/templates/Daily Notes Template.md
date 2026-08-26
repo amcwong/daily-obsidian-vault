@@ -1,0 +1,97 @@
+---
+todo_done: 0
+workout_today: 1
+home_cook: 1
+short_meal: 1
+bed_no_phone: 1
+early_sleep: 1
+read_today: 1
+reward_a_claimed: 0
+reward_b_claimed: 0
+---
+<%* await tp.user.carryOverCalc(tp) %>
+# Daily Journal
+---
+***Today***
+<% tp.file.cursor(1) %>
+
+***Yesterday***
+<% tp.file.cursor(2) %>
+
+**Reward A**: *rename this prize*
+**Reward B**: *rename this prize*
+
+---
+### 📈 Metrics & Streaks
+```dataviewjs
+// Carry-in totals come from .reward-cache.json (written at note creation).
+// Today's YAML is added live. See !daily-notes/README.md.
+const p = dv.current();
+const notesMarker = "/notes/";
+const pathIdx = p.file.path.indexOf(notesMarker);
+const dailyNotesRoot = pathIdx !== -1 ? p.file.path.slice(0, pathIdx) : "!daily-notes";
+const CACHE_PATH = `${dailyNotesRoot}/.reward-cache.json`;
+
+async function readCache() {
+    try {
+        const raw = await app.vault.adapter.read(CACHE_PATH);
+        return JSON.parse(raw);
+    } catch (e) {
+        return {};
+    }
+}
+
+const cache = await readCache();
+const todayEntry = cache[p.file.name] || { rewardATotal: 0, rewardBTotal: 0, streaks: {} };
+
+const NON_TODO_REWARD_FIELDS = ["workout_today", "home_cook", "short_meal", "bed_no_phone", "early_sleep", "read_today"];
+const NUM_NON_TODO_PROPS = NON_TODO_REWARD_FIELDS.length;
+
+function calculateThreshold(numDaysUntilCompletion, numNonTodoProps = NUM_NON_TODO_PROPS) {
+    return numNonTodoProps * numDaysUntilCompletion * 2;
+}
+
+const REWARD_A_DAYS_UNTIL_COMPLETION = 10;
+const REWARD_B_DAYS_UNTIL_COMPLETION = 5;
+const REWARD_A_THRESHOLD = calculateThreshold(REWARD_A_DAYS_UNTIL_COMPLETION);
+const REWARD_B_THRESHOLD = calculateThreshold(REWARD_B_DAYS_UNTIL_COMPLETION);
+
+// todo_done is 0 / 1 / 2: 1 is half the todo point budget, 2 is the full
+// budget (equal to all other habits combined).
+function todoPointsFromValue(value) {
+    const n = Number(value || 0);
+    if (n === 1) return Math.floor(NUM_NON_TODO_PROPS / 2);
+    if (n === 2) return NUM_NON_TODO_PROPS;
+    return 0;
+}
+function dailyScore(page) {
+    const habitPoints = NON_TODO_REWARD_FIELDS.reduce((s, f) => s + Number(page[f] || 0), 0);
+    return habitPoints + todoPointsFromValue(page.todo_done);
+}
+const todayScore = dailyScore(p);
+
+const rewardATotal = todayEntry.rewardATotal + todayScore;
+const rewardBTotal = todayEntry.rewardBTotal + todayScore;
+
+function streakDisplay(fieldName) {
+    const cached = Number(todayEntry.streaks?.[fieldName] || 0);
+    const value = Number(p[fieldName] || 0);
+    const completedToday = fieldName === "todo_done" ? (value === 1 || value === 2) : value > 0;
+    return (completedToday ? cached + 1 : cached) + " days";
+}
+
+dv.table(
+    ["Metric", "Value"],
+    [
+        ["🎯 Reward B Progress", `${rewardBTotal} / ${REWARD_B_THRESHOLD}` + (rewardBTotal >= REWARD_B_THRESHOLD ? " 🏆 Congrats!" : "")],
+        ["🎁 Reward A Progress", `${rewardATotal} / ${REWARD_A_THRESHOLD}` + (rewardATotal >= REWARD_A_THRESHOLD ? " 🏆 Congrats!" : "")],
+        ["Todo Streak ✅", streakDisplay("todo_done")],
+        ["Workout Streak 💪", streakDisplay("workout_today")],
+        ["Home-Cook Streak 🍳", streakDisplay("home_cook")],
+        ["Short-Meal Streak 🥪", streakDisplay("short_meal")],
+        ["No-Phone-in-Bed Streak 🌙", streakDisplay("bed_no_phone")],
+        ["Early Sleep Streak 😴", streakDisplay("early_sleep")],
+        ["Read Streak 📚", streakDisplay("read_today")],
+    ]
+);
+```
