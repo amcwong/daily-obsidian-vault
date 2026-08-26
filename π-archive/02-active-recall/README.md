@@ -2,7 +2,7 @@
 
 Retrieval practice for a concept you almost know. The file exists so you **produce** the answer, not so you re-read an explanation. Collapsed self-check questions are the point.
 
-This folder is under `π-` because it is lower-access than daily notes and misc notes in the vault this configuration came from. Re-prefix (`!` or `~`) if it becomes a daily surface. See [[style-guide/folder-prefixes]].
+This folder is under `π-` because it is lower-access than daily notes and misc notes in the vault this configuration came from. Re-prefix (`!` or `~`) if it becomes a daily surface. See [[dev/style-guide/folder-prefixes]].
 
 Use **misc notes** (`NOTE`) when the concept is gone and you need a tldr-first reference. Use **this** (`VAL`) when you can already write a paragraph. Both modes share one Claude Project. Misc notes land in `!misc-notes/`; these files stay here.
 

@@ -14,7 +14,7 @@ The prefix is a recency/use signal, not a permanent taxonomy. Retag a folder whe
 | Prefix | Role | Sort position | In this vault |
 |---|---|---|---|
 | `!` | High-frequency working surfaces | Top (ASCII 33, before letters) | `!daily-notes`, `!misc-notes` |
-| *(none)* | Tooling / infrastructure | Middle, with Latin letters | `dev`, `style-guide` |
+| *(none)* | Tooling / infrastructure | Middle, with Latin letters | `dev` |
 | `~` | Medium-frequency life areas | After Latin letters (ASCII 126) | `~goals`, `~personal`, `~school`, `~work` |
 | `π` | Low-frequency / archive / attachments | Bottom (Greek letter) | `π-archive`, `π-imgs` |
 
@@ -31,7 +31,7 @@ New folder names should use `-` or `_`, not spaces. See [[naming]].
 - You open it most days → `!`
 - You open it some weeks, not most days → `~`
 - You rarely open it, or it is attachments/history → `π`
-- Scripts, configs, this style guide → leave unprefixed
+- Scripts, configs, style guide → leave unprefixed (they live under `dev/`)
 
 ## What breaks on rename
 

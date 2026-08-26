@@ -18,7 +18,7 @@ If you cannot hold a streak longer than a week, the failure condition is too str
 
 Shipped examples (matching the sample daily note): `todo-done`, `workout-today`, `home-cook`, `short-meal`, `bed-no-phone`. New fields: copy `templates/goal-template.md`.
 
-Rename or re-prefix this folder when your access pattern changes (`!` if it becomes daily, `π-` if it cools off). New subfolders: `-` or `_`, never spaces. See [[style-guide/folder-prefixes]] and [[style-guide/naming]].
+Rename or re-prefix this folder when your access pattern changes (`!` if it becomes daily, `π-` if it cools off). New subfolders: `-` or `_`, never spaces. See [[dev/style-guide/folder-prefixes]] and [[dev/style-guide/naming]].
 
 ## When a goal needs a folder
 
