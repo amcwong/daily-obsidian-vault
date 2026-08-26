@@ -1,6 +1,6 @@
 # Common issues
 
-Setup and path problems. The root README’s quick start is: open the vault, press Cmd-Shift-D, then read [[!daily-notes/README|daily notes]].
+Setup and path problems. First-run (includes GitHub backup): [[dev/docs/quick-start|quick start]]. The root README’s short version is: open the vault, press Cmd-Shift-D, then read [[!daily-notes/README|daily notes]].
 
 ## Theme and plugins
 
@@ -22,7 +22,7 @@ If Cmd-Shift-D does nothing, check [[dev/docs/hotkeys|hotkeys]] and Settings →
 
 ## Todoist
 
-**Set this up.** Follow [[dev/docs/todoist-setup|Todoist setup]]. Scoring (`todo_done` 0/1/2) works without the plugin; the live task list does not.
+**Set this up.** Follow [[dev/docs/todoist-setup|Todoist setup]]. Day-to-day use: [[dev/docs/todoist|Todoist]]. Scoring (`todo_done` 0/1/2) works without the plugin; the live task list does not.
 
 ## Folder Notes
 

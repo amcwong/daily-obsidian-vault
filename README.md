@@ -22,7 +22,9 @@ Open this folder as an Obsidian vault. Press **Cmd-Shift-D** (macOS) to open tod
 
 How that note works: [[!daily-notes/README|daily notes README]].
 
-**Strongly recommended:** set up Todoist so today’s and overdue tasks show in the daily note. Follow [[dev/docs/todoist-setup|Todoist setup]].
+**Strongly recommended:**
+- Set up Todoist so today’s and overdue tasks show in the daily note. Follow [[dev/docs/todoist-setup|Todoist setup]]. Day-to-day use: [[dev/docs/todoist|Todoist]].
+- Set up GitHub backup so the vault is not only on this machine. Follow [[dev/docs/quick-start|quick start]].
 
 Other shortcuts: [[dev/docs/hotkeys|hotkeys]]. Theme, plugins, or path problems: [[dev/docs/common-issues|common issues]].
 

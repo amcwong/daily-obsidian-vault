@@ -32,3 +32,5 @@ Complete tasks in Todoist (sync is one-way into Obsidian). Command palette → *
 | `2` | Finished the day’s list |
 
 How that feeds streaks and rewards: [[!daily-notes/README|daily notes]].
+
+How to use Todoist day to day: [[dev/docs/todoist|Todoist]].
