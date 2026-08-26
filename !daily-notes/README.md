@@ -34,7 +34,7 @@ Required:
 - **Dataview** — Enable JavaScript queries
 - **Calendar** — uses the same Daily Notes settings
 
-Hotkeys: Cmd-Shift-D (today), Cmd-Shift-Y (previous day), Cmd-Shift-; (next Templater cursor).
+Hotkeys: see [[style-guide/hotkeys]] (Cmd-Shift-D / Y / ; / A).
 
 ## Daily loop
 

@@ -46,6 +46,8 @@ Start with [[style-guide/README|style-guide]], then [[!daily-notes/README|daily 
 
 ## Hotkeys shipped in this vault
 
+See [[style-guide/hotkeys]]. Summary:
+
 | Shortcut (macOS) | Action |
 |---|---|
 | Cmd-Shift-D | Today’s daily note |
@@ -53,6 +55,7 @@ Start with [[style-guide/README|style-guide]], then [[!daily-notes/README|daily 
 | Cmd-Shift-; | Next Templater cursor |
 | Cmd-Shift-A / S | Toggle left / right sidebar |
 | Cmd-Alt-1…6 | Set heading level |
+| Cmd-Shift-P (optional) | Push backup to GitHub if you install Obsidian Git |
 
 ## Folder Notes
 
