@@ -12,7 +12,7 @@
 // Habit field names here MUST match NON_TODO_REWARD_FIELDS in
 // !daily-notes/templates/Daily Notes Template.md. See !daily-notes/README.md.
 
-const NON_TODO_FIELDS = ["workout_today", "home_cook", "short_meal", "bed_no_phone", "early_sleep", "read_today"];
+const NON_TODO_FIELDS = ["workout_today", "home_cook", "short_meal", "bed_no_phone"];
 const STREAK_FIELDS = ["todo_done", ...NON_TODO_FIELDS];
 const NUM_NON_TODO_PROPS = NON_TODO_FIELDS.length;
 const MAX_LOOKBACK_DAYS = 60;

@@ -9,15 +9,19 @@ tags: [goal]
 > [!note] Template
 > Duplicate this file (or copy its sections) for each new daily-note property. Filename: kebab-case, no spaces.
 
-## What this goal is
+## Description
 
-*One or two sentences: the pattern you are replacing, and what “done” looks like on a normal day.*
+*One or two sentences: the pattern you are replacing, and what “done” looks like on a normal day. Stability goals usually save time, support health, or make you more present.*
 
 ## How I want to achieve it
 
-- *Concrete action you can log as `0` or `1` (or `0` / `1` / `2` for `todo_done`) on the daily note.*
+- *Concrete action. Default on the daily note is `1` (maintenance — you expect to hit this every day).*
 - *When it happens (morning, after work, before bed).*
-- *What does not count.*
+
+## Failure condition
+
+- *The exact situation that makes you log `0`. Example: “I time each meal for 30 minutes; I log `0` for short-meal if any meal goes over.”*
+- *If you cannot keep a streak longer than a week, loosen this condition and rewrite the goal.*
 
 ## Related
 

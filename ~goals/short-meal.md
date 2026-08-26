@@ -8,12 +8,17 @@ tags: [goal]
 
 ## What this goal is
 
-Stop meals from becoming an unbounded event (long delivery waits, grazing, extra orders). A short, planned plate is the win.
+Stop meals from becoming an unbounded event (long delivery waits, grazing, extra orders). Saves time and keeps you present for the rest of the evening.
 
 ## How I want to achieve it
 
-- Use a simple meal you can finish in a bounded window.
-- Log `1` if meals stayed short and planned, `0` if they sprawled.
+- Time each meal. The cap is **30 minutes** from first bite to done (phone down, plate cleared).
+- Default is `1`. Use a simple meal you can finish in that window.
+
+## Failure condition
+
+- Log `0` if any meal goes over 30 minutes, including waiting for delivery that pushes the sitting past the cap.
+- Snacking that turns into a second untimed meal is `0`. A 30-minute timer that you actually stop on is `1`.
 
 ## Related
 

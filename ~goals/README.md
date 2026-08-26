@@ -9,9 +9,14 @@ See [[!daily-notes/README|daily notes]] for how the two folders work together.
 Every goal that is a **property on the daily note** must have a file in this folder. That file should say:
 
 1. What the goal is
-2. How you want to achieve it
+2. Actionable steps for how you want to achieve it
+3. A **clear failure condition** — the exact situation that makes you log `0` (or `0` on `todo_done`)
 
-The sample daily note’s fields have example files here (`todo-done`, `workout-today`, `home-cook`, `short-meal`, `bed-no-phone`, `early-sleep`, `read-today`). New fields: copy `templates/goal-template.md`.
+The system is designed around what I call **maintenance goals**. The daily-note default is `1`: you expect to complete the goal every day and only flip it to `0` when the failure condition happens. Common stability goals are about saving time, being healthier, and being more present.
+
+If you cannot hold a streak longer than a week, the failure condition is too strict. Open this folder and define an easier version of the same goal.
+
+Shipped examples (matching the sample daily note): `todo-done`, `workout-today`, `home-cook`, `short-meal`, `bed-no-phone`. New fields: copy `templates/goal-template.md`.
 
 Rename or re-prefix this folder when your access pattern changes (`!` if it becomes daily, `π-` if it cools off). New subfolders: `-` or `_`, never spaces. See [[style-guide/folder-prefixes]] and [[style-guide/naming]].
 

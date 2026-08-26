@@ -1,11 +1,9 @@
 ---
-todo_done: 0
+todo_done: 1
 workout_today: 1
 home_cook: 1
 short_meal: 1
 bed_no_phone: 1
-early_sleep: 1
-read_today: 1
 reward_a_claimed: 0
 reward_b_claimed: 0
 ---
@@ -32,7 +30,7 @@ async function readCache() {
 const cache = await readCache();
 const todayEntry = cache[p.file.name] || { rewardATotal: 0, rewardBTotal: 0, streaks: {} };
 
-const NON_TODO_REWARD_FIELDS = ["workout_today", "home_cook", "short_meal", "bed_no_phone", "early_sleep", "read_today"];
+const NON_TODO_REWARD_FIELDS = ["workout_today", "home_cook", "short_meal", "bed_no_phone"];
 const NUM_NON_TODO_PROPS = NON_TODO_REWARD_FIELDS.length;
 
 function calculateThreshold(numDaysUntilCompletion, numNonTodoProps = NUM_NON_TODO_PROPS) {
@@ -78,8 +76,6 @@ dv.table(
         ["Home-Cook Streak 🍳", streakDisplay("home_cook")],
         ["Short-Meal Streak 🥪", streakDisplay("short_meal")],
         ["No-Phone-in-Bed Streak 🌙", streakDisplay("bed_no_phone")],
-        ["Early Sleep Streak 😴", streakDisplay("early_sleep")],
-        ["Read Streak 📚", streakDisplay("read_today")],
     ]
 );
 ```

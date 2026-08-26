@@ -17,13 +17,13 @@ A second purpose is yesterday. The **Yesterday** prompt is there so you notice w
 - Carry-over math lives in `!daily-notes/.reward-cache.json`, not in frontmatter, so Properties stays editable fields only.
 - Two reward tracks share the same daily points but have different horizons. Rename the prizes in the template.
 
-Goal fields in this public vault are generic examples. Change them to match your life (see Customizing goals).
+Goal fields in this public vault are generic examples (`todo_done`, `workout_today`, `home_cook`, `short_meal`, `bed_no_phone`). Change them to match your life (see Customizing goals). Each one needs a file in [[~goals/README|~goals]] with a clear failure condition.
 
 ## What belongs on the daily note
 
 The Properties fields are **personal goals that promote life stability and consistency** — the ones you are trying to make automatic because a current pattern is costing you. Each field should have a matching note in the [[~goals/README|goals folder]] that says what the goal is and how you will achieve it.
 
-They are not a catch-all checklist. Shaving, taking medication, or “study one hour” would not qualify: those are tasks or one-off discipline, not stability goals you are rebuilding. Cooking at home (`home_cook`) qualifies if the problem is eating out; no phone in bed (`bed_no_phone`) qualifies if the problem is doom-scrolling. Pick fields the same way: a real pattern you are replacing, with a goal file behind it.
+They are not a catch-all checklist. Shaving, taking medication, or “study one hour” would not qualify: those are tasks or one-off discipline, not stability goals you are rebuilding. Cooking at home (`home_cook`) qualifies if the problem is eating out; no phone in bed (`bed_no_phone`) qualifies if the problem is doom-scrolling. Pick fields the same way: a real pattern you are replacing, with a goal file behind it and a failure condition you can actually keep for more than a week.
 
 ## Plugins and settings
 
@@ -41,7 +41,7 @@ Hotkeys: see [[style-guide/hotkeys]] (Cmd-Shift-D / Y / ; / A).
 1. Cmd-Shift-D (or the calendar) creates today’s file. Templater runs `carryOverCalc.js` once and writes today’s cache entry.
 2. Look at today’s tasks and at your current goals (the “make your bed” check-in).
 3. Write **Yesterday**: what to improve, and any goal that follows from that. Then write **Today**.
-4. Log goals in Properties. Binary goals are `0` or `1`. `todo_done` is:
+4. Log goals in Properties. Binary goals default to `1` (maintenance — you expect to complete them). Flip to `0` only when the failure condition in that goal’s file happens. `todo_done` is:
    - `0` — did not work the list / none done
    - `1` — partial (about half the day’s tasks)
    - `2` — finished the day’s list
@@ -49,9 +49,9 @@ Hotkeys: see [[style-guide/hotkeys]] (Cmd-Shift-D / Y / ; / A).
 
 ## Scoring (short)
 
-- Six binary goals: 1 point each if `> 0`. (`workout_today`, `home_cook`, `short_meal`, `bed_no_phone`, `early_sleep`, `read_today`)
-- `todo_done` of `1` is half that budget (3 points); `2` is the full budget (6 points). Max day = 12.
-- Threshold = `6 × days-until-completion × 2`. Defaults in the template: reward B = 5 days (60), reward A = 10 days (120). Edit those constants in the template.
+- Four binary goals: 1 point each if `> 0`. (`workout_today`, `home_cook`, `short_meal`, `bed_no_phone`)
+- `todo_done` of `1` is half that budget (2 points); `2` is the full budget (4 points). Max day = 8.
+- Threshold = `4 × days-until-completion × 2`. Defaults in the template: reward B = 5 days (40), reward A = 10 days (80). Edit those constants in the template.
 - Streaks: a binary goal continues if `> 0`; `todo_done` continues on `1` or `2`. Missed *notes* are treated as continuing a streak; a logged miss breaks it.
 
 The Metrics table is live for **today**. Everything before today is baked into the cache at creation. Editing an old note does not recompute downstream entries — fix a stale chain by hand in `.reward-cache.json`.

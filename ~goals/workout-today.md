@@ -8,12 +8,17 @@ tags: [goal]
 
 ## What this goal is
 
-Move on purpose most days so exercise is a default, not a debate. A walk counts if it was the plan; skipping because the day got busy does not.
+Move on purpose every day so exercise is a default, not a debate. Health first: a 20-minute walk counts if that was the plan.
 
 ## How I want to achieve it
 
-- Pick the session the night before or in **Yesterday** / **Today** on the daily note.
-- Log `1` if you did it, `0` if you did not.
+- Name the session in **Yesterday** / **Today** (walk, gym, video class — one is enough).
+- Default is `1`. Do it before the day is gone; morning is the backup if evening slips.
+
+## Failure condition
+
+- Log `0` if you skip the planned session and do not replace it with at least 20 minutes of movement the same day.
+- “Too busy” without a replacement is a fail. A shorter walk than planned still counts as `1` if you actually went.
 
 ## Related
 
