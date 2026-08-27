@@ -80,13 +80,6 @@ dv.table(
 );
 ```
 
-## 📋 Tasks (Today & Overdue)
-
-```todoist
-name: Active Tasks
-filter: "(today | overdue) & (!shared)"
-```
-
 # Daily Journal
 ---
 ***Today***
@@ -97,3 +90,10 @@ filter: "(today | overdue) & (!shared)"
 
 **Reward A**: *rename this prize*
 **Reward B**: *rename this prize*
+
+## 📋 Tasks (Today & Overdue)
+
+```todoist
+name: Active Tasks
+filter: "(today | overdue) & (!shared)"
+```
