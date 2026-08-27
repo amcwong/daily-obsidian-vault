@@ -17,7 +17,7 @@ A second purpose is yesterday. The **Yesterday** prompt is there so you notice w
 - YAML goal fields keep the Properties panel as the daily checklist.
 - The template embeds today’s and overdue Todoist tasks. Setup: [[dev/docs/todoist-setup|Todoist setup]]. Usage: [[dev/docs/todoist|Todoist]]. Without the plugin the block is inert; `todo_done` still scores the day as `0` / `1` / `2`.
 - Carry-over math lives in `!daily-notes/.reward-cache.json`, not in frontmatter, so Properties stays editable fields only.
-- Two reward tracks share the same daily points but have different horizons. Rename the prizes in the template.
+- One reward track. Rename the prize in the template.
 
 Goal fields in this public vault are generic examples (`todo_done`, `workout_today`, `home_cook`, `short_meal`, `bed_no_phone`). Change them to match your life (see Customizing goals). Each one needs a file in [[~goals/README|~goals]] with a clear failure condition.
 
@@ -47,13 +47,13 @@ Hotkeys: see [[dev/docs/hotkeys]] (Cmd-Shift-D / Y / ; / A).
    - `0` — did not work the list / none done
    - `1` — partial (about half the day’s tasks)
    - `2` — finished the day’s list
-5. When a reward track hits its threshold, log a positive number in `reward_a_claimed` or `reward_b_claimed`. The **next** note’s carry-in for that track resets to 0. Today’s displayed total does not zero until then.
+5. When the reward hits its threshold, log a positive number in `reward_claimed`. The **next** note’s carry-in resets to 0. Today’s displayed total does not zero until then.
 
 ## Scoring (short)
 
 - Four binary goals: 1 point each if `> 0`. (`workout_today`, `home_cook`, `short_meal`, `bed_no_phone`)
 - `todo_done` of `1` is half that budget (2 points); `2` is the full budget (4 points). Max day = 8.
-- Threshold = `4 × days-until-completion × 2`. Defaults in the template: reward B = 5 days (40), reward A = 10 days (80). Edit those constants in the template.
+- Threshold = `4 × days-until-completion × 2`. Default in the template: 10 days (80). Edit that constant in the template.
 - Streaks: a binary goal continues if `> 0`; `todo_done` continues on `1` or `2`. Missed *notes* are treated as continuing a streak; a logged miss breaks it.
 
 The Metrics table is live for **today**. Everything before today is baked into the cache at creation. Editing an old note does not recompute downstream entries — fix a stale chain by hand in `.reward-cache.json`.

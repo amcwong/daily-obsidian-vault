@@ -8,7 +8,6 @@
     "home_cook": "number",
     "short_meal": "number",
     "bed_no_phone": "number",
-    "reward_a_claimed": "number",
-    "reward_b_claimed": "number"
+    "reward_claimed": "number"
   }
 }

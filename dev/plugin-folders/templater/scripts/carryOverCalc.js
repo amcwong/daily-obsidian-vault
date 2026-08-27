@@ -104,8 +104,7 @@ async function carryOverCalc(tp) {
     const cachePath = cachePathFromRoot(root);
 
     const fallback = {
-        rewardATotal: 0,
-        rewardBTotal: 0,
+        rewardTotal: 0,
         streaks: Object.fromEntries(STREAK_FIELDS.map(f => [f, 0])),
     };
 
@@ -123,12 +122,10 @@ async function carryOverCalc(tp) {
         const lastScore = dailyScoreFromFrontmatter(fm);
         const priorEntry = cache[dateKey] || fallback;
 
-        const rewardATotal = Number(fm.reward_a_claimed || 0) > 0
+        const priorTotal = Number(priorEntry.rewardTotal ?? priorEntry.rewardATotal ?? 0);
+        const rewardTotal = Number(fm.reward_claimed || 0) > 0
             ? 0
-            : priorEntry.rewardATotal + lastScore;
-        const rewardBTotal = Number(fm.reward_b_claimed || 0) > 0
-            ? 0
-            : priorEntry.rewardBTotal + lastScore;
+            : priorTotal + lastScore;
 
         const streaks = {};
         for (const f of STREAK_FIELDS) {
@@ -138,7 +135,7 @@ async function carryOverCalc(tp) {
             streaks[f] = wasCompleted ? cached + 1 + gapDays : 0;
         }
 
-        result = { rewardATotal, rewardBTotal, streaks };
+        result = { rewardTotal, streaks };
     }
 
     if (!/^\d{4}-\d{2}-\d{2}$/.test(todayKey)) {

@@ -4,8 +4,7 @@ workout_today: 1
 home_cook: 1
 short_meal: 1
 bed_no_phone: 1
-reward_a_claimed: 0
-reward_b_claimed: 0
+reward_claimed: 0
 ---
 <%* await tp.user.carryOverCalc(tp) %>
 ### 📈 Metrics & Streaks
@@ -28,7 +27,7 @@ async function readCache() {
 }
 
 const cache = await readCache();
-const todayEntry = cache[p.file.name] || { rewardATotal: 0, rewardBTotal: 0, streaks: {} };
+const todayEntry = cache[p.file.name] || { rewardTotal: 0, streaks: {} };
 
 const NON_TODO_REWARD_FIELDS = ["workout_today", "home_cook", "short_meal", "bed_no_phone"];
 const NUM_NON_TODO_PROPS = NON_TODO_REWARD_FIELDS.length;
@@ -37,10 +36,8 @@ function calculateThreshold(numDaysUntilCompletion, numNonTodoProps = NUM_NON_TO
     return numNonTodoProps * numDaysUntilCompletion * 2;
 }
 
-const REWARD_A_DAYS_UNTIL_COMPLETION = 10;
-const REWARD_B_DAYS_UNTIL_COMPLETION = 5;
-const REWARD_A_THRESHOLD = calculateThreshold(REWARD_A_DAYS_UNTIL_COMPLETION);
-const REWARD_B_THRESHOLD = calculateThreshold(REWARD_B_DAYS_UNTIL_COMPLETION);
+const REWARD_DAYS_UNTIL_COMPLETION = 10;
+const REWARD_THRESHOLD = calculateThreshold(REWARD_DAYS_UNTIL_COMPLETION);
 
 // todo_done is 0 / 1 / 2: 1 is half the todo point budget, 2 is the full
 // budget (equal to all other goals combined).
@@ -56,8 +53,7 @@ function dailyScore(page) {
 }
 const todayScore = dailyScore(p);
 
-const rewardATotal = todayEntry.rewardATotal + todayScore;
-const rewardBTotal = todayEntry.rewardBTotal + todayScore;
+const rewardTotal = Number(todayEntry.rewardTotal ?? todayEntry.rewardATotal ?? 0) + todayScore;
 
 function streakDisplay(fieldName) {
     const cached = Number(todayEntry.streaks?.[fieldName] || 0);
@@ -69,8 +65,7 @@ function streakDisplay(fieldName) {
 dv.table(
     ["Metric", "Value"],
     [
-        ["🎯 Reward B Progress", `${rewardBTotal} / ${REWARD_B_THRESHOLD}` + (rewardBTotal >= REWARD_B_THRESHOLD ? " 🏆 Congrats!" : "")],
-        ["🎁 Reward A Progress", `${rewardATotal} / ${REWARD_A_THRESHOLD}` + (rewardATotal >= REWARD_A_THRESHOLD ? " 🏆 Congrats!" : "")],
+        ["🎁 Reward Progress", `${rewardTotal} / ${REWARD_THRESHOLD}` + (rewardTotal >= REWARD_THRESHOLD ? " 🏆 Congrats!" : "")],
         ["Todo Streak ✅", streakDisplay("todo_done")],
         ["Workout Streak 💪", streakDisplay("workout_today")],
         ["Home-Cook Streak 🍳", streakDisplay("home_cook")],
@@ -88,8 +83,7 @@ dv.table(
 ***Yesterday***
 <% tp.file.cursor(2) %>
 
-**Reward A**: *rename this prize*
-**Reward B**: *rename this prize*
+**Reward**: *rename this prize*
 
 ## 📋 Tasks (Today & Overdue)
 
