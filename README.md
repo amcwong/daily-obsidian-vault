@@ -1,6 +1,6 @@
 # Reusable Obsidian vault configuration
 
-This vault is the **reusable configuration** of a personal Obsidian vault used for organizing life and taking notes. It is the workflows, templates, and folder conventions — not the private notes those workflows produced.
+This vault is the **reusable configuration** of a personal Obsidian vault used for organizing life and taking active recall notes. For learning notes, check out my Claude based workflow at https://github.com/amcwong/claude-code-my-workflow which is a fork of pedrohcgs's workflow.
 
 Copy or clone it, then follow each folder’s README. Plugin and theme setup is in [[dev/docs/common-issues|common issues]]. Do not commit `.obsidian/todoist-token` or your own journal, school, or work notes if you publish a fork.
 
